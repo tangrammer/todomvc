@@ -1699,6 +1699,31 @@
 			}]
 		}]
 	},
+ 	"om": {
+		"name": "Om",
+		"description": "Om is a ClojureScript library over Facebook's React'.",
+		"homepage": "swannodette.github.io/om",
+		"examples": [{
+			"name": "Architecture Examples",
+			"url": "labs/architecture-examples/om"
+		}],
+		"link_groups": [{
+			"heading": "Official Resources",
+			"links": [{
+				"name": "Tutorial",
+				"url": "http://swannodette.github.io"
+			}, {
+				"name": "Philosophy",
+				"url": "http://swannodette.github.io"
+			}, {
+				"name": "Common Questions",
+				"url": "http://swannodette.github.io"
+			}, {
+				"name": "Support",
+				"url": "http://swannodette.github.io"
+			}]
+		}]
+	},
 	"sammyjs": {
 		"name": "Sammy.js",
 		"description": "A small web framework with class.",
