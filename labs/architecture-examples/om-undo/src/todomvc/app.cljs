@@ -175,17 +175,18 @@
 ;; =============================================================================
 ;; Time Travel
 
-(def app-history (atom []))
+(def app-history (atom [@app-state]))
 
 (add-watch app-state :history
   (fn [_ _ _ n]
     (when-not (= (last @app-history) n)
       (swap! app-history conj n))
     (set! (.-innerHTML (.getElementById js/document "message"))
-      (str (count @app-history) " Saved States"))))
+      (let [c (count @app-history)]
+        (str c " Saved " (pluralize c "State"))))))
 
 (aset js/window "undo"
   (fn [e]
-    (when (pos? (count @app-history))
+    (when (> (count @app-history) 1)
       (swap! app-history pop)
       (reset! app-state (last @app-history)))))
