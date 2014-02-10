@@ -8,7 +8,8 @@
             [secretary.core :as secretary]
             [todomvc.utils :refer [pluralize now guid store hidden]]
             [clojure.string :as string]
-            [todomvc.item :as item])
+            [todomvc.item :as item]
+            [clojure.browser.repl])
   (:import [goog History]
            [goog.history EventType]))
 
@@ -148,7 +149,7 @@
             (dom/h1 nil "todos")
             (dom/input
               #js {:ref "newField" :id "new-todo"
-                   :placeholder "What needs to be done?"
+                   :placeholder ".... things to do..."
                    :onKeyDown #(handle-new-todo-keydown % app owner)})
             (main app comm)
             (footer app active completed comm)))))))
@@ -162,7 +163,7 @@
       (dom/a #js {:href "http://github.com/swannodette"}))
     (dom/p nil
       #js ["Part of"
-           (dom/a #js {:href "http://todomvc.com"} "TodoMVC")]))
+           (dom/a #js {:href "http://todomvc2.com"} "TodoMVC22")]))
   (.getElementById js/document "info"))
 
 ;; =============================================================================

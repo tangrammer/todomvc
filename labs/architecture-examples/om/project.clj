@@ -10,11 +10,11 @@
                  [secretary "0.4.0"]
                  [om "0.3.6"]]
 
-  :plugins [[lein-cljsbuild "1.0.2"]]
-
+  :plugins [[lein-cljsbuild "1.0.2"][com.cemerick/austin "0.1.3"]]
+  :repl-options { :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
   :source-paths ["src"]
-
-  :cljsbuild { 
+  :injections [(require '[cemerick.austin.repls :refer (exec) :rename {exec austin-exec}])]
+  :cljsbuild {
     :builds [{:id "dev"
               :source-paths ["src"]
               :compiler {
